@@ -1,0 +1,13 @@
+# Pierre's specific
+temp/
+**/.DS_Store
+**/.ipynb_checkpoints
+
+# .gitignore specific
+!.gitkeep
+
+# data/
+data/**
+
+# results/
+results/*
