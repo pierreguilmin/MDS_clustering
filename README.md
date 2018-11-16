@@ -24,7 +24,9 @@ Built with R version 3.5.1
     - `tibble`
     - `heatmap3`
     - `prodlim`
+    - `survival`
     - `RColorBrewer`
+    - `IRdisplay`
 
 
 ## todo list
