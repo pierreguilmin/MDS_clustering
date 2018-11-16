@@ -195,6 +195,11 @@ get_top_categories_by_component <- function(hdp_output, cat_names, top_number) {
 
 
 get_prediction_result_dataframe <- function(hdp_output, data) {
+    # Return a dataframe giving for each patient the probability by component, as well as the assigned component and its probability (max_proba)
+    # → Arguments
+    #     - hdp_output: hdpSampleChain or hdpSampleMulti object
+    #     - data      : original data
+
     # keep all DP but first (first level)
     dd_predicted <- data.frame(comp_dp_distn(hdp_output)$mean[-1,])
 
@@ -212,7 +217,7 @@ get_prediction_result_dataframe <- function(hdp_output, data) {
                                                                  else
                                                                      return(which.max(x)-1)
                                                                 })
-    dd_predicted[,'predicted_component'] <- factor(dd_predicted[,'predicted_component'])
+    dd_predicted[, 'predicted_component'] <- factor(dd_predicted[, 'predicted_component'])
 
     # evaluate for each row the maximum probability associated to the predicted component
     dd_predicted['max_proba'] <- apply(dd_predicted[,components_colnames], 1, function(x) { if (all(is.na(x)))
@@ -226,6 +231,10 @@ get_prediction_result_dataframe <- function(hdp_output, data) {
 
 
 plot_assignement_probability_by_component <- function(dd_predicted) {
+    # Plot boxplot comparing the assignement probability for each component
+    # → Arguments
+    #     - dd_predicted: dataframe with predicted component and max probability predicted for each patient
+
     set_notebook_plot_size(10, 5)
 
     n_initial <- nrow(dd_predicted)
@@ -238,7 +247,13 @@ plot_assignement_probability_by_component <- function(dd_predicted) {
 
 
 plot_assignement_probability_distribution_by_component <- function(dd_predicted, width = 20, height = 10) {
-    # plot all probability distribution for sample grouped by category
+    # Plot density comparing the assignement probability, for each component
+    # → Arguments
+    #     - dd_predicted: dataframe with predicted component and max probability predicted for each patient
+    #     - width
+    #     - height
+
+    set_notebook_plot_size(width, height)
 
     n_initial <- nrow(dd_predicted)
     dd_predicted <- na.omit(dd_predicted)
@@ -246,14 +261,10 @@ plot_assignement_probability_distribution_by_component <- function(dd_predicted,
     # we transform (extand) distn in a long data frame by gathering the categories columns in one column
     long_dd_predicted <- melt(dd_predicted, id = c('predicted_component', 'max_proba'))
 
-    set_notebook_plot_size(width, height)
+    
     ggplot(long_dd_predicted) +
         geom_density(aes(value, fill = variable), alpha = 0.4) +
         facet_wrap(~ predicted_component, ncol = 4, labeller = label_both) +
         coord_cartesian(ylim = c(0, 30)) +
         ggtitle(sprintf('Assignment probability density by component (removed %d NA values)', n_initial - nrow(dd_predicted)))
 }
-
-
-
-

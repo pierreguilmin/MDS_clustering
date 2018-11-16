@@ -3,7 +3,7 @@
 
 # MDS clustering
 
-**Clusterize the MDS disease by mutation and cytogenetics feature and observe clinical features distribution by cluster.**
+**Clusterise the MDS disease by mutation and cytogenetics feature and observe clinical features distribution by cluster.**
 
 ***
 
@@ -24,6 +24,7 @@ Built with R version 3.5.1
     - `tibble`
     - `heatmap3`
     - `prodlim`
+    - `RColorBrewer`
 
 
 ## todo list
@@ -39,4 +40,4 @@ Built with R version 3.5.1
 
 ## temp
 
-scp -r guilminp@lski1997:/Users/guilminp/Documents/MDS .
+scp -r guilminp@lski1997:/Users/guilminp/Documents/MDS_clustering .
