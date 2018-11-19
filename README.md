@@ -23,7 +23,7 @@ Built with R version 3.5.1
     - `gridExtra`
     - `tibble`
     - `heatmap3`
-    - `prodlim`
+    - `survminer`
     - `survival`
     - `RColorBrewer`
     - `IRdisplay`
