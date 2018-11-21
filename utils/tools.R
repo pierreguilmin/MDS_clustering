@@ -70,5 +70,5 @@ print_size <- function(data) {
     # → Arguments
     #     - data
 
-    cat(sprintf('Size of %s: %d x %d', deparse(substitute(data)), nrow(data), ncol(data)))
+    cat(sprintf('Size of %s: %d x %d\n', deparse(substitute(data)), nrow(data), ncol(data)))
 }
