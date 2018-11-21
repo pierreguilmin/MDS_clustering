@@ -24,6 +24,7 @@ Built with R version 3.5.1
     - `tibble`
     - `survminer`
     - `survival`
+    - `glmnet`
     - `RColorBrewer`
     - `IRdisplay`
 
@@ -35,7 +36,7 @@ Built with R version 3.5.1
 - [ ] understand theory better
 - [ ] try other clustering method
 - [ ] play with hdp parameters
-- [ ] improve heatmap plot
+- [x] improve heatmap plot
 - [x] axes and title for each plot
 - [x] split genes by hotspots
 
