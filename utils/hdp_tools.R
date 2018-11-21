@@ -2,7 +2,7 @@
 ### hdp_tools.R #################
 #################################
 #
-# This file gather some useful functions to work with Nicola Roberts HDP R package (https://github.com/nicolaroberts/hdp) which implements the hierarchical Dirichlet process  
+# This file gather some useful functions to work with Nicola Roberts HDP R package (https://github.com/nicolaroberts/hdp) which implements the hierarchical Dirichlet process
 #
 
 library('hdp')

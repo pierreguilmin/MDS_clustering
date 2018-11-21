@@ -22,7 +22,6 @@ Built with R version 3.5.1
     - `reshape2`
     - `gridExtra`
     - `tibble`
-    - `heatmap3`
     - `survminer`
     - `survival`
     - `RColorBrewer`
