@@ -1,9 +1,6 @@
-:construction: *work in progress* :construction:
-
-
 # MDS clustering
 
-**Clusterise the MDS disease by mutation and cytogenetics feature and observe clinical features distribution by cluster.**
+**Clusterise the MDS disease by mutation and cytogenetics features and observe clinical features distribution across clusters.**
 
 ***
 
@@ -31,15 +28,11 @@ Built with R version 3.5.1
 
 ## todo list
 
-- [ ] try dataset with all genes and cytogenetics
-- [x] top genes by component
-- [ ] understand theory better
-- [ ] try other clustering method
-- [ ] play with hdp parameters
 - [x] improve heatmap plot
 - [x] axes and title for each plot
 - [x] split genes by hotspots
-
-## temp
-
-scp -r guilminp@lski1997:/Users/guilminp/Documents/MDS_clustering .
+- [x] top genes by component
+- [ ] try dataset with all genes and cytogenetics
+- [ ] understand theory better
+- [ ] try other clustering method
+- [ ] play with hdp parameters
