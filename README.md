@@ -1,6 +1,6 @@
 # MDS clustering
 
-**Clusterization of the MDS disease by mutation and cytogenetics features and study of the clinical features distribution across clusters.**
+**Clusterization of the MDS disease by mutation and cytogenetics features and study of the clinical features distribution across the 11 found clusters.**
 
 ***
 
